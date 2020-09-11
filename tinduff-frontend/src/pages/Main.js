@@ -41,19 +41,21 @@ export default function Main({ match }) {
                 <ul>
                     {users.map(user => (                
                         <li key={user._id}>
-                            <img src={user.avatar} alt="nome" />
-                            <footer>
-                                <strong>{user.name}</strong>
-                                <p>{user.bio}</p>
-                            </footer>
-    
-                            <div className="buttons">
-                                <button type="button" onClick={() => handleDislike(user._id)}>
-                                    <img src={dislikes} alt="Dislike" />
-                                </button>
-                                <button type="button" onClick={() => handleLike(user._id)}>
-                                    <img src={likes} alt="like" />
-                                </button>
+                            <img src={user.avatar} className="cardImage" alt="nome" />
+                            <div className="lettersPadding">
+                                <div className="CardInfo">
+                                    <strong>{user.name}</strong>
+                                    <p>{user.bio}</p>
+                                </div>
+        
+                                <div className="actionButtons">
+                                    <button type="button" onClick={() => handleDislike(user._id)}>
+                                        <img className="actionButtonsImage" src={dislikes} alt="Dislike" />
+                                    </button>
+                                    <button type="button" onClick={() => handleLike(user._id)}>
+                                        <img className="actionButtonsImage" src={likes} alt="like" />
+                                    </button>
+                                </div>
                             </div>
                         </li>
                     ))}
